@@ -45,8 +45,6 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Images\GameScript.cs" />
-     <Compile Include="Assets\Images\SpecialEffectsScript.cs" />
      <Compile Include="Assets\PlayPhone\Examples\AchievementsExample.cs" />
      <Compile Include="Assets\PlayPhone\Examples\AppInfoExample.cs" />
      <Compile Include="Assets\PlayPhone\Examples\BillingExample.cs" />
@@ -69,6 +67,9 @@
      <Compile Include="Assets\PlayPhone\Plugins\PlayPhoneMyPlay.cs" />
      <Compile Include="Assets\PlayPhone\Plugins\PlayPhonePlayerData.cs" />
      <Compile Include="Assets\PlayPhone\Plugins\PlayPhonePlugin.cs" />
+     <Compile Include="Assets\Scripts\EnemyCollision.cs" />
+     <Compile Include="Assets\Scripts\GameScript.cs" />
+     <Compile Include="Assets\Scripts\SpecialEffectsScript.cs" />
      <None Include="Assets\PlayPhone\Editor\DefaultAndroidManifest.xml" />
  <Reference Include="UnityEngine.Networking">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
