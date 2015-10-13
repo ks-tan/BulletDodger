@@ -10,6 +10,7 @@ public class EnemyCollision : MonoBehaviour {
 			GameScript.health--;
 			Vector3 position = gameObject.transform.position;
 			SpecialEffectsScript.MakeExplosion ((position));
+			Handheld.Vibrate();
 			Destroy (gameObject);
 		}
 	}
