@@ -39,7 +39,8 @@ public class SpecialEffectsScript : MonoBehaviour
 			Debug.LogError("There is no SpecialEffectsScript in the scene!");
 			return null;
 		}
-		
+
+		Debug.Log ("EXPLODE");
 		ParticleSystem effect = Instantiate(instance.explosionEffect) as ParticleSystem;
 		effect.transform.position = position;
 		

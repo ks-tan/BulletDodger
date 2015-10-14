@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using System.Linq;
 using System.Collections.Generic;
 
 public class GameScript : MonoBehaviour
@@ -8,6 +9,7 @@ public class GameScript : MonoBehaviour
 	public GameObject player;
 	public GameObject enemy;
 	public Text score;
+	public Text status;
 	public GameObject panel;
 
 	private Dictionary<int, GameObject> trails = new Dictionary<int, GameObject>();
@@ -15,9 +17,9 @@ public class GameScript : MonoBehaviour
 	public static int health;
 
 	void Start() {
+		health = 3;
 		panel.SetActive (false);
 		timer = Time.timeSinceLevelLoad + 2;
-		health = 3;
 		score.GetComponent<Text> ();
 	}
 	
@@ -31,6 +33,15 @@ public class GameScript : MonoBehaviour
 			SpecialEffectsScript.MakeExplosion ((position));
 			SpecialEffectsScript.MakeExplosion ((position));
 			panel.SetActive(true);
+
+			health = 3;
+			float currentScore = Mathf.Round (Time.timeSinceLevelLoad-1);
+			PlayPhone.MyPlay.SubmitScore ("1338", (int)currentScore);
+			Debug.Log ("Submitting score: " + (int) currentScore);
+			if (currentScore >= 5){
+				Debug.Log("Achievement unlocked");
+				PlayPhone.MyPlay.UnlockAchievement("3514");
+			}
 			Destroy(player);
 		}
 

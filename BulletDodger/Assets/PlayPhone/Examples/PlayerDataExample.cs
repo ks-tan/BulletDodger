@@ -36,6 +36,7 @@ public class PlayerDataExample : ExampleScreen
 
 		PlayPhone.Plugin.OnLeaderboardsData += (json) => {
 			SetStatus("LeaderboardsData=" + json);
+			Debug.Log (json);
 		};
 		PlayPhone.Plugin.OnLeaderboardsDataError += (json) => {
 			SetStatus("LeaderboardsData=" + json);
